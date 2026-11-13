@@ -31,3 +31,7 @@ embedded = false
 include_config_on_deploy = true
 dev_store_url = "pruebas-aplicaciones-bm.myshopify.com"
 automatically_update_urls_on_dev = false
+[app_navigation]
+  [[app_navigation.items]]
+  label = "Settings"
+  destination = "/app/settings"
