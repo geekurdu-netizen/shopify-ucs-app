@@ -1,10 +1,11 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "88410c3ebea1e0dd486d8d4a68ea2c37"
-application_url = "https://shopify.ucs.com.pk//"
+# Make sure this exactly matches where your app is hosted:
+application_url = "https://shopify.ucs.com.pk" 
 embedded = true
-name = "UCS Portal"
-handle = "ucs-portal"
+name = "UniLink Courier Solutions"
+handle = "unilink-courier-solutions"
 
 [webhooks]
 api_version = "2025-01"
@@ -18,11 +19,11 @@ api_version = "2025-01"
   uri = "/webhooks/app/scopes_update"
 
 [access_scopes]
-# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_products, read_orders, write_orders"
 
 [auth]
-redirect_urls = [ "https://shopify-vercel-app-chi.vercel.app/api/auth" ]
+# This must match your app domain + /auth/callback
+redirect_urls = [ "https://shopify.ucs.com.pk/auth/callback" ]
 
 [pos]
 embedded = false
@@ -31,6 +32,7 @@ embedded = false
 include_config_on_deploy = true
 dev_store_url = "pruebas-aplicaciones-bm.myshopify.com"
 automatically_update_urls_on_dev = false
+
 [app_navigation]
   [[app_navigation.items]]
   label = "Settings"
