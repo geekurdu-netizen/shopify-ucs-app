@@ -15,14 +15,12 @@ const shopify = shopifyApp({
   appUrl: process.env.SHOPIFY_APP_URL || "",
   authPathPrefix: "/auth",
   sessionStorage: new PrismaSessionStorage(prisma),
-  distribution: AppDistribution.AppStore,
+  distribution: AppDistribution.AppStore, // or SingleMerchant
   future: {
     unstable_newEmbeddedAuthStrategy: true,
     removeRest: true,
   },
-  ...(process.env.SHOP_CUSTOM_DOMAIN
-    ? { customShopDomains: [process.env.SHOP_CUSTOM_DOMAIN] }
-    : {}),
+  // Removed SHOP_CUSTOM_DOMAIN to prevent the Regex crash
 });
 
 export default shopify;
